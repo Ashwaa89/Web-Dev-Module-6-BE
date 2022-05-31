@@ -1,0 +1,32 @@
+//npm i express
+//npm i express-list-endpoints
+//npm i mongoose
+//npm i -D nodemon
+//npm i -D dotenv
+//add "type": "module", in package.json after main
+//add .env file  to root with MONGO_CONNECTION_STRING=mongodb+src://...
+//add .gitignore file, add /node_modules & .env
+//add "dev": "nodemon -r dotenv/config ./src/server.js" in package.json scripts"
+
+//npm i http-errors
+//npm i cors
+//npm i express-validator
+//npm i query-to-mongo
+//npm i multer
+//npm i cloudinary
+//npm i multer-storage-cloudinary
+//npm i @sendgrid/mail
+//npm i bcrypt
+//npm i jsonwebtoken
+//npm i passport
+//npm i express-session or add ,{session:false} to .get("/googleRedirect", passport.authenticate("google",{session:false}) endpoint
+//npm i passport-google-oauth20
+//npm i node-fetch
+//url query:offset = mongo:skip
+//start: npm run dev
+
+
+
+
+Host front end on Vercel
+Host back end on heroku
