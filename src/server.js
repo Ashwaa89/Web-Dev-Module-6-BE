@@ -35,6 +35,8 @@ mongoose.connection.on("connected", () => {
   server.listen(port, () => {
     console.table(listEndpoints(server));
     console.log(process.env.PORT)
+    console.log(process.env.FE_URL)
+    console.log(process.env.BE_URL)
     console.log("server sez hi");
   });
 });
