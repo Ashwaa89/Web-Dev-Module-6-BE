@@ -10,7 +10,6 @@ const GooglePassport = new GoogleStrategy(
     callbackURL: `${process.env.BE_URL}/blogAuthor/googleRedirect`
 },
 async (accessToken, refreshToken, profile, CB) => {
-  console.log(profile.emails[0].value)
 try {
     const blogAuthor = await blogAuthorsModel.findOne({ email: profile.emails[0].value })
    if(blogAuthor) {

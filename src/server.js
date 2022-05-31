@@ -19,8 +19,8 @@ server.use(errorHandler);
 const whitelist = [process.env.FE_URL]
 server.use(cors({
   origin: (origin, next) => {
-    console.log("CURRENT ORIGIN: ", origin)
-    if (!origin || whitelist.indexOf(origin) !== -1) {
+   // console.log("CURRENT ORIGIN: ", origin)
+    if (!origin || origin  === process.env.FE_URL) {
       next(null, true)
     } else {    
       next(createError(400, `CORS ERROR! Your origin: ${origin} is not in the whitelist!`))
@@ -34,9 +34,6 @@ mongoose.connect(process.env.MONGO_CONNECTION_STRING);
 mongoose.connection.on("connected", () => {
   server.listen(port, () => {
     console.table(listEndpoints(server));
-    console.log(process.env.PORT)
-    console.log(process.env.FE_URL)
-    console.log(process.env.BE_URL)
     console.log("server sez hi");
   });
 });

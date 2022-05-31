@@ -21,11 +21,11 @@ blogAuthors.post(
   checkValidationResult,
   async (req, res, next) => {
     try {
-      console.log(req.body)
+
       const newblogAuthor = new blogAuthorsModel(req.body);
       const savedblogAuthor = await newblogAuthor.save();   
       
-      console.log(savedblogAuthor)
+
           // To: savedblogAuthor.email
       sendEmail(process.env.FROM_ADDRESS,"Account Created", `Welcome ${savedblogAuthor.name}`,`<h4>Happy Posting</h4>`)
      
@@ -135,10 +135,10 @@ blogAuthors.put("/avatar/",checkAuth,upload('avatars'),  async (req,res, next) =
 //get
 blogAuthors.get("/",checkAuth,isAdmin, async (req, res, next) => {
   //localhost:3001/blogauthor?fields=name,surname
-  console.log('found route')
+
   try {
     const query = q2m(req.query);
-    console.log(query);
+
     if (!query.options.skip) query.options.skip = 0;
     if (!query.options.limit || query.options.limit > 10)
       query.options.limit = 20;
